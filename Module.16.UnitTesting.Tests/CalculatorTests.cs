@@ -1,26 +1,25 @@
-﻿using NUnit.Framework;
-using System;
+﻿using System;
+using Xunit;
 
 namespace Module._16.UnitTesting.Tests
 {
-    [TestFixture]
-    class CalculatorTests
+    public class CalculatorTests
     {
-        [Test]
+        [Fact]
         public void Subtraction_MustReturnCorrectValue()
         {
             Calculator calculator = new Calculator();
-            Assert.That(calculator.Subtraction(300, 10) == 290);
+            Assert.True(calculator.Subtraction(300, 10) == 290);
         }
 
-        [Test]
+        [Fact]
         public void Division_MustReturnCorrectValue()
         {
             Calculator calculator = new Calculator();
-            Assert.That(calculator.Division(10, 5) == 2);
+            Assert.True(calculator.Division(10, 5) == 2);
         }
 
-        [Test]
+        [Fact]
         public void Division_MustThrowException()
         {
             Calculator calculator = new Calculator();
