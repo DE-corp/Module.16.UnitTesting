@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 
 namespace Module._16.UnitTesting.Tests
 {
@@ -17,6 +18,13 @@ namespace Module._16.UnitTesting.Tests
         {
             Calculator calculator = new Calculator();
             Assert.That(calculator.Division(10, 5) == 2);
+        }
+
+        [Test]
+        public void Division_MustThrowException()
+        {
+            Calculator calculator = new Calculator();
+            Assert.Throws<DivideByZeroException>(() => calculator.Division(30, 0));
         }
     }
 }
