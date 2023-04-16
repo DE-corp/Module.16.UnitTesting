@@ -24,7 +24,7 @@ namespace Module._16.UnitTesting
             FakeBaseData.Add(ticket);
         }
 
-        public void DeleteTicket(Ticket ticket)
+        private void DeleteTicket(Ticket ticket)
         {
             FakeBaseData.Remove(ticket);
         }
