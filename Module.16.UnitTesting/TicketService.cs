@@ -12,18 +12,34 @@ namespace Module._16.UnitTesting
                throw new TicketNotFoundException() : ticket.Id;
         }
 
-        private IEnumerable<Ticket> FakeBaseData
+        public Ticket GetTicket(int ticketId)
         {
-            get
-            {
-                return new List<Ticket>
-         {
+            var ticket = FakeBaseData.FirstOrDefault(t => t.Id == ticketId);
+            return (ticket is null) ?
+              throw new TicketNotFoundException() : ticket;
+        }
+
+        public void SaveTicket(Ticket ticket)
+        {
+            FakeBaseData.Add(ticket);
+        }
+
+        public void DeleteTicket(Ticket ticket)
+        {
+            FakeBaseData.Remove(ticket);
+        }
+
+        public IEnumerable<Ticket> GetAllTickets()
+        {
+            return FakeBaseData;
+        }
+
+        private List<Ticket> FakeBaseData = new List<Ticket>
+          {
             new Ticket(1, "Москва - Санкт-Петербург", 3500),
             new Ticket(2, "Челябинск - Магадан", 3500),
             new Ticket(3, "Норильск - Уфа", 3500)
-         };
-            }
-        }
+          };
 
     }
 }
