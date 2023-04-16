@@ -2,8 +2,8 @@
 
 namespace Module._16.UnitTesting
 {
-    public interface IUserRepository
+    public interface IBookRepository
     {
-        IEnumerable<User> FindAll();
+        IEnumerable<Book> FindAll();
     }
 }
