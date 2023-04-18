@@ -2,14 +2,24 @@
 {
     public class Calculator
     {
-        public int Addition(int v1, int v2, int v3)
+        public int Additional(int a, int b)
         {
-            return v1 + v2 + v3;
+            return a + b;
         }
 
-        public int Multiplication(int v1, int v2, int v3)
+        public int Subtraction(int a, int b)
         {
-            return v1 * v2 * v3;
+            return a - b;
+        }
+
+        public int Multiplication(int a, int b)
+        {
+            return a * b;
+        }
+
+        public int Division(int a, int b)
+        {
+            return a / b;
         }
     }
 }
